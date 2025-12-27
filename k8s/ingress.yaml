@@ -12,7 +12,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - techsolutions.yourdomain.com
+    - ursamigo.shop
     secretName: techsolutions-tls
   rules:
   - host: ursamigo.shop
