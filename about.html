@@ -6,26 +6,16 @@
     <title>Learn With AMIGOS - About The Training</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #ffffff;
         }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
+        /* Navbar */
         .navbar {
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             padding: 1rem 0;
@@ -35,45 +25,29 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
             padding: 0 20px;
         }
-
-        .nav-logo h2 {
-            color: white;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
+        .nav-logo h2 { color: white; font-size: 1.8rem; font-weight: 700; }
+        .nav-menu { display: flex; list-style: none; gap: 2rem; }
         .nav-link {
             color: white;
             text-decoration: none;
-            font-weight: 500;
             padding: 0.5rem 1rem;
             border-radius: 25px;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
-
-        .nav-link:hover,
-        .nav-link.active {
+        .nav-link:hover, .nav-link.active {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             padding: 120px 0 80px;
@@ -81,137 +55,89 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            min-height: 80vh;
         }
-
         .hero-content h1 {
             font-size: 3rem;
             font-weight: 800;
             color: #1e293b;
-            margin-bottom: 1rem;
         }
-
         .hero-content p {
             font-size: 1.25rem;
             color: #64748b;
-            margin-bottom: 2rem;
+            margin-top: 1rem;
         }
-
         .hero-image img {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
 
-        /* Training Approach Section */
-        .training-approach {
-            padding: 100px 0;
-            background: #ffffff;
-        }
-
+        /* Training Approach */
+        .training-approach { padding: 100px 0; }
         .training-approach h2 {
             font-size: 3rem;
             font-weight: 800;
-            color: #1e293b;
-            margin-bottom: 2rem;
             text-align: center;
+            margin-bottom: 2rem;
         }
-
         .approach-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
         .approach-text p {
             font-size: 1.2rem;
             color: #64748b;
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
+            margin-bottom: 1.2rem;
         }
-
-        .approach-text h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #1e293b;
-        }
-
-        .approach-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-        }
-
         .stats {
             display: flex;
-            justify-content: space-around;
-            margin-top: 3rem;
+            justify-content: space-between;
+            margin-top: 2rem;
         }
-
         .stat {
-            text-align: center;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: #f1f5f9;
             padding: 2rem;
             border-radius: 20px;
-            border: 1px solid #e2e8f0;
+            text-align: center;
+            flex: 1;
+            margin: 0 0.5rem;
         }
-
         .stat h4 {
             font-size: 2.5rem;
             color: #2563eb;
-            margin-bottom: 0.5rem;
         }
 
-        .stat p {
-            font-size: 1.1rem;
-            color: #64748b;
-        }
-
-        /* Trainer Section */
+        /* Trainer */
         .trainer-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
-
         .trainer-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
         .trainer-image img {
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.15);
         }
-
         .trainer-info h2 {
             font-size: 2.8rem;
             font-weight: 800;
             color: #1e293b;
-            margin-bottom: 1rem;
         }
-
         .trainer-info h3 {
             font-size: 1.5rem;
             color: #2563eb;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            margin-bottom: 1rem;
         }
-
         .trainer-info p {
             font-size: 1.1rem;
             color: #64748b;
-            margin-bottom: 1rem;
-            line-height: 1.7;
         }
 
         /* Footer */
@@ -221,132 +147,90 @@
             text-align: center;
             padding: 3rem 0;
         }
-
-        .footer p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-        }
-
         .youtube-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: white;
             background: #ff0000;
-            padding: 0.5rem 1.5rem;
+            padding: 0.6rem 1.5rem;
             border-radius: 25px;
+            color: white;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .youtube-link:hover {
-            background: #cc0000;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .approach-content, .trainer-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
         }
 
         @media (max-width: 768px) {
             .nav-menu { display: none; }
-            .hero { grid-template-columns: 1fr; text-align: center; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 { font-size: 2rem; }
-            .stat h4 { font-size: 2rem; }
+            .hero, .approach-content, .trainer-container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Learn With AMIGOS</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/about" class="nav-link active">About</a></li>
-                <li class="nav-item"><a href="/courses" class="nav-link">Modules</a></li>
-                <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo"><h2>Learn With AMIGOS</h2></div>
+        <ul class="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link active">About</a></li>
+            <li><a href="/courses" class="nav-link">Modules</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>About The Jenkins + Docker + Kubernetes + Terraform Training</h1>
-            <p>Master DevOps from basics to advanced with hands-on projects, CI/CD pipelines, container orchestration, and Terraform automation.</p>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DevOps Training">
-        </div>
-    </section>
+<section class="hero">
+    <div class="hero-content">
+        <h1>About the DevOps Training</h1>
+        <p>Hands-on Jenkins, Docker, Kubernetes, Terraform & AWS training designed by industry professionals.</p>
+    </div>
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+    </div>
+</section>
 
-    <section class="training-approach">
-        <div class="container">
-            <h2>Training Approach</h2>
-            <div class="approach-content">
-                <div class="approach-text">
-                    <p>Since 2020, Mr. Kastro Kiran has been delivering cutting-edge DevOps training programs combining theory with hands-on practice.</p>
-                    <p>Each session ensures participants gain job-ready skills in Jenkins CI/CD pipelines, Docker containerization, and Kubernetes orchestration.</p>
-                    <h3>What Makes Us Different</h3>
-                    <p>We emphasize building actual infrastructure that mirrors production environments. You’ll work on live cloud platforms, troubleshoot real issues, and deploy applications like real DevOps professionals.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <h4>700+</h4>
-                            <p>Students Trained</p>
-                        </div>
-                        <div class="stat">
-                            <h4>5+</h4>
-                            <p>Institutes Worked With</p>
-                        </div>
-                        <div class="stat">
-                            <h4>5+</h4>
-                            <p>Years Training Experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="approach-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training Environment">
+<section class="training-approach">
+    <div class="container">
+        <h2>Our Training Approach</h2>
+        <div class="approach-content">
+            <div class="approach-text">
+                <p><strong>Learn With AMIGOS</strong> delivers practical DevOps training focused on real-world cloud infrastructure.</p>
+                <p>Participants build CI/CD pipelines, containerized apps, Kubernetes clusters, and Terraform-based AWS infrastructure.</p>
+                <div class="stats">
+                    <div class="stat"><h4>700+</h4><p>Students</p></div>
+                    <div class="stat"><h4>10+</h4><p>Real Projects</p></div>
+                    <div class="stat"><h4>5+</h4><p>Years Experience</p></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="trainer-section">
-        <div class="container">
-            <div class="trainer-container">
-                <div class="trainer-image">
-                    <img src="https://media.licdn.com/dms/image/v2/D5603AQHJB_lF1d9OSw/profile-displayphoto-shrink_800_800/0/1718971147172?e=1756944000&v=beta&t=cEB8ggSlRb14fBxOBa8JOrsW8v0dF0UIuRF4gPtUqo8" alt="Kastro Kiran V">
-                </div>
-                <div class="trainer-info">
-                    <h2>Learn with Amigo V</h2>
-                    <h3>DevOps & Cloud Training Specialist</h3>
-                    <p>Passionate DevOps educator with 5+ years of experience, having trained over 700 students across multiple institutes.</p>
-                    <p>Focuses on hands-on implementation of Cloud and DevOps practices in real-world scenarios for practical learning.</p>
-                </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" style="width:100%;border-radius:20px;">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Learn With AMIGOS. All rights reserved.</p>
-            <p>Follow our YouTube channel for more DevOps projects and tutorials</p>
-            <a href="https://www.youtube.com/" class="youtube-link" target="_blank">
-                <i class="fab fa-youtube"></i> Subscribe to LearnWithAMIGOS
-            </a>
+<section class="trainer-section">
+    <div class="container">
+        <div class="trainer-container">
+            <div class="trainer-image">
+                <img src="https://images.unsplash.com/photo-1600267165477-6d4cc741b379?auto=format&fit=crop&w=800&q=80">
+            </div>
+            <div class="trainer-info">
+                <h2>AMIGO DevOps Team</h2>
+                <h3>Cloud & DevOps Experts</h3>
+                <p>Our AMIGO trainers are experienced DevOps engineers with strong expertise in AWS, Kubernetes, CI/CD, and Infrastructure as Code.</p>
+                <p>The focus is on hands-on labs, real production scenarios, and job-ready skills.</p>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2025 Learn With AMIGOS. All rights reserved.</p>
+    <a href="https://www.youtube.com/" class="youtube-link">
+        <i class="fab fa-youtube"></i> Subscribe to LearnWithAMIGOS
+    </a>
+</footer>
 
 </body>
 </html>
